@@ -1,3 +1,8 @@
+import random
+import time
+
+print("Iniciando teste automatizado...\n")
+
 maior_altura = 0
 menor_altura = 0
 soma_altura_homens = 0
@@ -5,23 +10,16 @@ qtd_homens = 0
 qtd_mulheres = 0
 
 for i in range(15):
-    while True:
-        try:
-            altura = float(input(f"Digite a altura da pessoa {i+1} (em metros): "))
-            if altura > 0 and altura <= 3:
-                break
-            else:
-                print("Erro: A altura deve ser maior que 0 e até 3 metros.")
-        except ValueError:
-            print("Erro: Digite um número válido.")
+    # Gerando dados aleatórios para teste
+    altura = round(random.uniform(1.50, 2.30), 2)
+    genero = random.choice(['M', 'F'])
 
-    while True:
-        genero = input(f"Digite o gênero da pessoa {i+1} (M para Masculino, F para Feminino): ").upper()
-        if genero == 'M' or genero == 'F':
-            break
-        else:
-            print("Erro: Gênero inválido. Digite apenas M ou F.")
+    print(f"--- Pessoa {i+1} ---")
+    print(f"Altura gerada: {altura}")
+    print(f"Gênero gerado: {genero}")
+    time.sleep(0.1) # Pequena pausa para visualização
 
+    # Mesma lógica do programa original
     if i == 0:
         maior_altura = altura
         menor_altura = altura
@@ -37,7 +35,9 @@ for i in range(15):
     elif genero == 'F':
         qtd_mulheres = qtd_mulheres + 1
 
-print("\nResultados:")
+print("\n------------------------------")
+print("RESULTADOS DO TESTE")
+print("------------------------------")
 print("Maior altura:", maior_altura)
 print("Menor altura:", menor_altura)
 
