@@ -10,16 +10,14 @@ qtd_homens = 0
 qtd_mulheres = 0
 
 for i in range(15):
-    # Gerando dados aleatórios para teste
     altura = round(random.uniform(1.50, 2.30), 2)
     genero = random.choice(['M', 'F'])
 
     print(f"--- Pessoa {i+1} ---")
     print(f"Altura gerada: {altura}")
     print(f"Gênero gerado: {genero}")
-    time.sleep(0.1) # Pequena pausa para visualização
+    time.sleep(0.1)
 
-    # Mesma lógica do programa original
     if i == 0:
         maior_altura = altura
         menor_altura = altura
